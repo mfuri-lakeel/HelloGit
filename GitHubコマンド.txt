@@ -1,0 +1,84 @@
+HelloGit
+初めてのGitHub
+
+https://github.com/mfuri-lakeel/HelloGit.git
+
+
+cd /d C:\work\91_learn\github
+mkdir gittest
+cd gittest
+git init
+→ローカルリポジトリの作成
+
+別のURLで作成した「hello.html」を配置
+
+git add hello.html
+→登録
+
+git commit -m "初めてのGitHub！"
+→ローカルへコミット
+
+[master (root-commit) 45d6639] 初めてのGitHub！
+ 1 file changed, 10 insertions(+)
+ create mode 100644 hello.html
+
+git remote add origin https://github.com/mfuri-lakeel/HelloGit.git
+→インデックス（ファイルの変更点などのリスト？）をGitHubに作成
+
+git push origin master
+
+mfuri.lakeel@gmail.com
+Hjm0715f
+
+Username for 'https://github.com': mfuri.lakeel@gmail.com
+Password for 'https://mfuri.lakeel@gmail.com@github.com':
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 361 bytes | 361.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/mfuri-lakeel/HelloGit.git
+ * [new branch]      master -> master
+
+hello.htmlを変更
+
+1）変更をインデックスに追加
+git add hello.html
+
+2）ファイルを登録（コミット）
+git commit -m "変更してみたよ"
+
+3）データの送信
+git push origin master
+
+
+ブランチ
+その名の通り「枝」．
+一気にバージョンを上げる時などに，失敗した時用にコピーを作っておくイメージ
+
+git branch testbranch
+
+git branch
+
+今は「master」というブランチに「*」がついています．
+これは今プッシュ（GitHubにデータを送信）すると，
+masterブランチに全部データが書き込まれますよという意味になります．
+
+git checkout testbranch
+
+
+git add hello.html
+git commit -m "ブランチを作ってそのブランチにプッシュ！"
+git push origin testbranch
+
+
+
+1）まずは取り込み先のブランチを選択します．
+git checkout master
+
+2）そして，materにtestbranchを結合します．
+git merge testbranch
+
+3）最後に，結合情報をGitHubに送ります（プッシュ）
+git push origin master
